@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fg: #f2efe8;
+  --muted: rgba(242, 239, 232, 0.68);
+  --line: rgba(242, 239, 232, 0.14);
+  --surface: #141416;
+  --accent: #c6ff3d;
+}
+/* A lighter "paper" theme for one project panel (still same identity, inverted) */
+[data-theme="paper"] {
+  --fg: #0b0b0c;
+  --muted: rgba(11, 11, 12, 0.7);
+  --line: rgba(11, 11, 12, 0.16);
+  --surface: #ffffff;
+  --accent: #3b5400;
+  background: #f2efe8;
+  color: var(--fg);
+}
+
+html { scroll-behavior: smooth; background: #0b0b0c; }
+body {
+  background: #0b0b0c;
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: #c6ff3d; color: #0b0b0c; }
+:focus-visible { outline: 2px solid #c6ff3d; outline-offset: 3px; }
+[data-theme="paper"] :focus-visible { outline-color: #0b0b0c; }
+
+.grid-lines {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+.flow { stroke-dasharray: 4 6; animation: flow 1.6s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -20; } }
+
+.skip-link {
+  position: fixed; left: 1rem; top: -4rem; z-index: 100;
+  background: #c6ff3d; color: #0b0b0c; padding: .6rem 1rem; font-weight: 600;
+}
+.skip-link:focus { top: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
