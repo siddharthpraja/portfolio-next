@@ -1,14 +1,8 @@
-import { site } from "@/lib/site";
+import { contactLinks } from "@/lib/site";
 import { Reveal, SectionLabel } from "./Reveal";
 
 export function Contact() {
-  const items = [
-    ...(site.email ? [{ l: "Email", h: `mailto:${site.email}` }] : []),
-    { l: "WhatsApp", h: site.links.whatsapp },
-    { l: "LinkedIn", h: site.links.linkedin },
-    { l: "GitHub", h: site.links.github },
-    { l: "Instagram", h: site.links.instagram },
-  ];
+  const items = contactLinks().map((c) => ({ l: c.label, h: c.href }));
   return (
     <section id="contact" aria-labelledby="contact-h" className="grid-lines border-t border-line px-5 py-28 md:px-10 md:py-40">
       <div className="mx-auto max-w-[1500px]">

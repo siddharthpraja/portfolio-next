@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { SystemVisual } from "./SystemVisual";
 import { site } from "@/lib/site";
@@ -55,15 +56,15 @@ export function Hero() {
             <p className="mt-5 max-w-md text-lg leading-relaxed text-muted">{site.description}</p>
 
             <div className="mt-8 flex flex-wrap items-center gap-6">
-              <a
-                href="#work"
+              <Link
+                href="/story"
                 data-cursor
                 className="inline-flex items-center gap-3 bg-lime px-6 py-4 text-sm font-semibold uppercase tracking-wider text-ink transition-transform hover:-translate-y-0.5"
               >
-                Explore Selected Work <span aria-hidden>↓</span>
-              </a>
-              <a href="#journey" className="border-b border-fg/40 pb-1 text-sm uppercase tracking-wider transition-colors hover:border-lime hover:text-lime">
-                About Me
+                Watch the story <span aria-hidden>▶</span>
+              </Link>
+              <a href="#work" className="border-b border-fg/40 pb-1 text-sm uppercase tracking-wider transition-colors hover:border-lime hover:text-lime">
+                Skip to the work ↓
               </a>
             </div>
           </div>

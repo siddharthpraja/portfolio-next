@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter_Tight, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import { Nav } from "@/components/Nav";
-import { Cursor } from "@/components/Cursor";
-import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 
 const sans = Inter_Tight({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -47,10 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
-        <Nav />
-        <Cursor />
-        <main id="main">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

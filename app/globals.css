@@ -55,3 +55,10 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ───────── Story page ───────── */
+.story-fade { animation: storyFade 0.9s ease-out forwards; }
+@keyframes storyFade { from { opacity: 1; } to { opacity: 0; } }
+.story-title { animation: storyTitle 3.4s ease-in-out forwards; }
+@keyframes storyTitle { 0% { opacity: 0; transform: translateY(12px); } 15% { opacity: 1; transform: none; } 80% { opacity: 1; } 100% { opacity: 0; } }
+.sr-only-focusable:focus { position: static; }

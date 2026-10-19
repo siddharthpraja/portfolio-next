@@ -1,18 +1,22 @@
 {
-  "name": "gautam-portfolio",
+  "name": "gautam-story-portfolio",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:story": "tsx scripts/check-story.ts",
+    "test": "npm run check:story && npm run typecheck"
   },
   "dependencies": {
     "framer-motion": "^11.18.0",
     "next": "^15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "0.170.0",
+    "@react-three/fiber": "^9.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
@@ -21,6 +25,8 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "@types/three": "0.170.0",
+    "tsx": "^4.19.0"
   }
 }
